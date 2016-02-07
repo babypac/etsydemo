@@ -12,7 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 gem 'paperclip', '~> 4.3', '>= 4.3.2'
 
-group :development do
+group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
