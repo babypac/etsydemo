@@ -8,6 +8,9 @@
     <h3><%= @listing.name %></h3>
     <p><%= number_to_currency(@listing.price, locale: :ko) %></p>
     <p><%= @listing.description %></p>
+    <div class="center">
+      <%= link_to "구매", new_listing_order_path(@listing), class: "btn btn-primary" %>
+    </div>
   </div>
 </div>
 
