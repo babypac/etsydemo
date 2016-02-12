@@ -100,6 +100,18 @@ ko:
       month: 월
       second: 초
       year: 년
+  devise:
+    registrations:
+      user:
+        signed_up: 회원가입 되었습니다
+        updated: 사용자 정보가 업데이트되었습니다
+    failure:
+      already_authenticated: 이미 로그인 되어 있습니다
+    sessions:
+      user:
+        signed_out: 로그아웃 되었습니다
+        already_signed_out: 이미 로그아웃 되었습니다
+        signed_in: 로그인 되었습니다
   errors:
     format: "%{attribute}%{message}"
     messages:
@@ -123,6 +135,7 @@ ko:
       too_long: 은(는) %{count}자를 넘을 수 없습니다
       too_short: 은(는) 적어도 %{count}자를 넘어야 합니다
       wrong_length: 은(는) %{count}자여야 합니다
+      not_saved: 저장되지 않았습니다
     template:
       body: '다음 항목에 문제가 발견되었습니다:'
       header:
