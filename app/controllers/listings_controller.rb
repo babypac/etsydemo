@@ -1,18 +1,13 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
 
-  # GET /listings
-  # GET /listings.json
   def index
     @listings = Listing.all
   end
 
-  # GET /listings/1
-  # GET /listings/1.json
   def show
   end
 
-  # GET /listings/new
   def new
     @listing = Listing.new
   end
@@ -22,9 +17,9 @@ class ListingsController < ApplicationController
   end
 
   # POST /listings
-  # POST /listings.json
   def create
     @listing = Listing.new(listing_params)
+    @listing.user_id = current_user.id
 
     respond_to do |format|
       if @listing.save
@@ -38,7 +33,6 @@ class ListingsController < ApplicationController
   end
 
   # PATCH/PUT /listings/1
-  # PATCH/PUT /listings/1.json
   def update
     respond_to do |format|
       if @listing.update(listing_params)
