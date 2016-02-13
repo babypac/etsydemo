@@ -19,9 +19,20 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <li><%= link_to  "판매자 물품목록", seller_path %></li>
-          <li><%= link_to  "정보수정", edit_user_registration_path %></li>
-          <li><%= link_to  "로그아웃", destroy_user_session_path, method: :delete %></li>
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <%= "#{current_user.name} 메뉴" %>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><%= link_to  "판매내역", sales_path %></li>
+              <li><%= link_to  "구매내역", purchases_path %></li>
+              <li><%= link_to  "판매자 물품목록", seller_path %></li>
+              <li role="separator" class="divider"></li>
+              <li><%= link_to  "정보수정", edit_user_registration_path %></li>
+              <li><%= link_to  "로그아웃", destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </div>
         <% else %>
           <li><%= link_to  "회원가입", new_user_registration_path %></li>
           <li><%= link_to  "로그인", new_user_session_path %></li>
